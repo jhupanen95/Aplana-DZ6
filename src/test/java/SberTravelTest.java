@@ -1,7 +1,6 @@
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
@@ -9,14 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.core.StringEndsWith.endsWith;
@@ -68,19 +64,19 @@ public class SberTravelTest {
         driver.findElement(By.xpath("//div[@class='b-form-prog-box b-form-active-box']")).click();
         driver.findElement(By.xpath("//span[text()='Оформить']")).click();
 
-        ArrayList<String> dat = new ArrayList<>(Arrays.asList(date.split(" ")));
+        ArrayList<String> arrayDate = new ArrayList<>(Arrays.asList(date.split(" ")));
 
-        driver.findElement(By.name("insured0_surname")).sendKeys(dat.get(0));
-        driver.findElement(By.name("insured0_name")).sendKeys(dat.get(1));
-        driver.findElement(By.name("insured0_birthDate")).sendKeys(dat.get(2));
-        driver.findElement(By.name("surname")).sendKeys(dat.get(3));
-        driver.findElement(By.name("name")).sendKeys(dat.get(4));
-        driver.findElement(By.name("middlename")).sendKeys(dat.get(5));
-        driver.findElement(By.name("birthDate")).sendKeys(dat.get(6));
-        driver.findElement(By.name("passport_series")).sendKeys(dat.get(7));
-        driver.findElement(By.name("passport_number")).sendKeys(dat.get(8));
-        driver.findElement(By.name("issueDate")).sendKeys(dat.get(9));
-        driver.findElement(By.name("issuePlace")).sendKeys(dat.get(10));
+        driver.findElement(By.name("insured0_surname")).sendKeys(arrayDate.get(0));
+        driver.findElement(By.name("insured0_name")).sendKeys(arrayDate.get(1));
+        driver.findElement(By.name("insured0_birthDate")).sendKeys(arrayDate.get(2));
+        driver.findElement(By.name("surname")).sendKeys(arrayDate.get(3));
+        driver.findElement(By.name("name")).sendKeys(arrayDate.get(4));
+        driver.findElement(By.name("middlename")).sendKeys(arrayDate.get(5));
+        driver.findElement(By.name("birthDate")).sendKeys(arrayDate.get(6));
+        driver.findElement(By.name("passport_series")).sendKeys(arrayDate.get(7));
+        driver.findElement(By.name("passport_number")).sendKeys(arrayDate.get(8));
+        driver.findElement(By.name("issueDate")).sendKeys(arrayDate.get(9));
+        driver.findElement(By.name("issuePlace")).sendKeys(arrayDate.get(10));
 
         driver.findElement(By.xpath("//span[text()='Продолжить']")).click();
 
