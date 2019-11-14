@@ -7,6 +7,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -31,12 +34,9 @@ public class SberTravelTest {
                 driver = new ChromeDriver();
                 break;
             case "firefox":
-                System.setProperty("webdriver.chrome.driver", "drv/chrome2driver.exe");
-                driver = new ChromeDriver();
-                break;
-            case "explorer":
-                System.setProperty("webdriver.chrome.driver", "drv/chro3medriver.exe");
-                driver = new ChromeDriver();
+                FirefoxOptions options = new FirefoxOptions();
+                options.setBinary("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+                driver = new FirefoxDriver(options);
                 break;
             }
         baseUrl = "https://www.sberbank.ru/ru/person/";
